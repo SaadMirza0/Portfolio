@@ -1,10 +1,14 @@
-
+"use client"
+import { useState } from "react"
 import DotGrid from "@/component/animations/DotGrid"
 import Navbar from "@/component/Navbar"
 export default function Contact() {
+const [form, setform] = useState({name:"",email:"",message:""})
 
 return (
-     <div className="relative w-screen h-screen  bg-[#020617] overflow-hidden">
+  <div className="relative w-screen h-screen bg-black">
+    <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div><div class="absolute left-0 right-0 top-[-10%] h-[1000px] w-[1000px] rounded-full bg-[radial-gradient(circle_400px_at_50%_300px,#fbfbfb36,#000)]">
+   
       <div className="absolute inset-0 z-0">
         <DotGrid
           dotSize={5}
@@ -75,7 +79,7 @@ return (
 
         {/* Themed Submit Button */}
         <div className="p-2 w-full mt-4">
-          <button className="flex mx-auto group relative items-center justify-center px-10 py-3 bg-cyan-500 text-black font-bold rounded-xl hover:scale-105 hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] transition-all duration-300 active:scale-95 overflow-hidden">
+          <button onClick={handlesubmit} className="flex mx-auto group relative items-center justify-center px-10 py-3 bg-cyan-500 text-black font-bold rounded-xl hover:scale-105 hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] transition-all duration-300 active:scale-95 overflow-hidden">
             <span className="relative z-10">Send Message</span>
             <div className="absolute inset-0 bg-white/20 translate-x-full group-hover:translate-x-full transition-transform duration-500" />
           </button>
@@ -89,9 +93,11 @@ return (
 
 
 </div>
+</div>
+</div>
 
 
-      </div>
+ 
 )
 
 }

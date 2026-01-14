@@ -9,9 +9,9 @@ const Button = () => {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   // Reusable Tailwind classes for the buttons
-  const btnBase = "group flex items-center justify-center h-[50px] w-[50px] hover:w-[150px] bg-black/[1.05] border border-white/[0.2] text-white rounded-xl hover:rounded-lg shadow-xl transition-all duration-300 cursor-pointer m-1 overflow-hidden px-3"
+  const btnBase = "group flex items-center justify-center h-[50px] 2xl:h-[80px] w-[50px] 2xl:w-[80px] hover:w-[150px] bg-black/[1.05] border border-white/[0.2] text-white rounded-xl hover:rounded-lg shadow-xl transition-all duration-300 cursor-pointer m-1 overflow-hidden px-3"
   const spanBase = "w-0 group-hover:w-full opacity-0 group-hover:opacity-100 transition-all  bg-black/[1.05] duration-300 text-center ml-2 whitespace-nowrap overflow-hidden text-1xl font-body ";
-  const svgBase = "h-6 w-6 shrink-0 fill-slate-50 ml-[7px]";
+  const svgBase = "h-6 w-6 2xl:h-10 2xl:w-10 shrink-0 fill-slate-50 ml-[7px]";
 
   return (
     <div className="flex justify-center items-center gap-1">

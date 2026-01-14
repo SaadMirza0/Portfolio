@@ -26,9 +26,9 @@ export default function RootLayout({ children }) {
      <html lang="en" className={`${montserrat.variable} ${roboto.variable}`}>
       <body className="antialiased">
     
-   
+     
           {children}
-   
+
       </body>
     </html>
   );
