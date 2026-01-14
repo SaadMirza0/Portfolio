@@ -3,7 +3,7 @@ export default function Footer() {
     return (
         
   
-<footer className=" relative w-full py-8 px-6 md:px-16 lg:px-24 border-t border-white/5 bg-neutral-950/50 backdrop-blur-md">
+<footer className=" relative w-full py-4 px-6 md:px-16 lg:px-24 border-t border-white/5 bg-neutral-950/50 backdrop-blur-md">
   <div className="flex flex-col md:flex-row justify-between items-center gap-6">
     
 

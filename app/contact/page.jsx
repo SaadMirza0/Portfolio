@@ -5,10 +5,28 @@ import Navbar from "@/component/Navbar"
 export default function Contact() {
 const [form, setform] = useState({name:"",email:"",message:""})
 
+
+const handlesubmit = (e) => {
+  e.preventDefault(); 
+  console.log(form);
+
+  setform({name: "",email: "",message: ""});
+
+};
+const handleChange = (e) => {
+
+  const { name, value } = e.target;
+
+  setform((prev) => ({
+    ...prev,          
+    [name]: value     
+  }));
+};
+
 return (
   <div className="relative w-screen h-screen bg-black">
-    <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div><div class="absolute left-0 right-0 top-[-10%] h-[1000px] w-[1000px] rounded-full bg-[radial-gradient(circle_400px_at_50%_300px,#fbfbfb36,#000)]">
-   
+    <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div><div className="absolute left-0 right-0 top-[-10%] h-[1000px] w-[1000px] rounded-full bg-[radial-gradient(circle_400px_at_50%_300px,#fbfbfb36,#000)]">
+{/*    
       <div className="absolute inset-0 z-0">
         <DotGrid
           dotSize={5}
@@ -21,7 +39,7 @@ return (
           resistance={750}
           returnDuration={1.5}
         />
-      </div>
+      </div> */}
          <nav className="absolute z-40"  >
               <Navbar />
               </nav>
@@ -54,7 +72,7 @@ return (
         <div className="p-2 w-1/2">
           <div className="relative group">
             <label htmlFor="name" className="leading-7 text-sm text-zinc-500 group-focus-within:text-cyan-400 transition-colors">Name</label>
-            <input type="text" id="name" name="name" 
+            <input type="text" onChange={handleChange} id="name" value= {form.name} name="name" 
               className="w-full bg-white/5 rounded-xl border border-white/10 focus:border-cyan-500/50 focus:bg-white/8 focus:ring-2 focus:ring-cyan-500/20 text-base outline-none text-white py-2 px-4 leading-8 transition-all duration-300 ease-in-out" />
           </div>
         </div>
@@ -63,7 +81,7 @@ return (
         <div className="p-2 w-1/2">
           <div className="relative group">
             <label htmlFor="email" className="leading-7 text-sm text-zinc-500 group-focus-within:text-cyan-400 transition-colors">Email</label>
-            <input type="email" id="email" name="email" 
+            <input type="email" onChange={handleChange} id="email" value= {form.email} name="email" 
               className="w-full bg-white/5 rounded-xl border border-white/10 focus:border-cyan-500/50 focus:bg-white/8 focus:ring-2 focus:ring-cyan-500/20 text-base outline-none text-white py-2 px-4 leading-8 transition-all duration-300 ease-in-out" />
           </div>
         </div>
@@ -72,14 +90,14 @@ return (
         <div className="p-2 w-full">
           <div className="relative group">
             <label htmlFor="message" className="leading-7 text-sm text-zinc-500 group-focus-within:text-cyan-400 transition-colors">Message</label>
-            <textarea id="message" name="message" 
+            <textarea id="message " onChange={handleChange}value={form.message} name="message" 
               className="w-full bg-white/5 rounded-xl border border-white/10 focus:border-cyan-500/50 focus:bg-white/8 focus:ring-2 focus:ring-cyan-500/20 h-32 text-base outline-none text-white py-2 px-4 resize-none leading-6 transition-all duration-300 ease-in-out" />
           </div>
         </div>
 
         {/* Themed Submit Button */}
         <div className="p-2 w-full mt-4">
-          <button onClick={handlesubmit} className="flex mx-auto group relative items-center justify-center px-10 py-3 bg-cyan-500 text-black font-bold rounded-xl hover:scale-105 hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] transition-all duration-300 active:scale-95 overflow-hidden">
+          <button onClick={handlesubmit} onChange={handleChange} className="flex mx-auto group relative items-center justify-center px-10 py-3 bg-cyan-500 text-black font-bold rounded-xl hover:scale-105 hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] transition-all duration-300 active:scale-95 overflow-hidden">
             <span className="relative z-10">Send Message</span>
             <div className="absolute inset-0 bg-white/20 translate-x-full group-hover:translate-x-full transition-transform duration-500" />
           </button>
