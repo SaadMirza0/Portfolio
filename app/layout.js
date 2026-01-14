@@ -1,6 +1,6 @@
 import "./globals.css";
 import Navbar from "../component/Navbar";
-import Footer from "../component/Footer";
+
 import { Montserrat, Roboto } from 'next/font/google';
 
 export const montserrat = Montserrat({
@@ -28,8 +28,8 @@ export default function RootLayout({ children }) {
     
      
           {children}
-
-      </body>
+   
+</body>
     </html>
   );
 }

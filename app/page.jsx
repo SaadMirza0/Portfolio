@@ -2,7 +2,7 @@ import DotGrid from "@/component/animations/DotGrid";
 import Navbar from "@/component/Navbar";
 import SplitText from "@/component/animations/SplitText";
 import Button from "@/component/smallcom/Buttons";
-import Footer from "@/component/Footer";
+import Footer from "@/component/Footer" 
 export default function Home() {
   return (
  
@@ -17,17 +17,17 @@ export default function Home() {
     <div className="flex flex-col gap-4 md:gap-6 px-6 md:px-16 lg:px-14 text-white w-full">
       
   
-      <h1 className="text-5xl md:text-6xl lg:text-7xl 2xl:text-[10rem] animate-[fade-in-bottom_2s_cubic-bezier(0.39,0.575,0.565,1)_both] font-heading text-[#FFFFFF] font-medium tracking-[0.02em]">
+      <h1 className="text-5xl md:text-6xl lg:text-7xl  animate-[fade-in-bottom_2s_cubic-bezier(0.39,0.575,0.565,1)_both] font-heading text-[#FFFFFF] font-medium tracking-[0.02em]">
         <span>S</span>aad <span>M</span>irza
       </h1>
 
      
-      <h2 className="text-xl md:text-2xl lg:text-2xl 2xl:text-4xl animate-[fade-in-bottom_2s_cubic-bezier(0.39,0.575,0.565,1)_1s_both] font-body text-[#FFFFFF] font-medium">
+      <h2 className="text-xl md:text-2xl lg:text-2xl  animate-[fade-in-bottom_2s_cubic-bezier(0.39,0.575,0.565,1)_1s_both] font-body text-[#FFFFFF] font-medium">
         Full-Stack Developer · UX-Focused Designer
       </h2>
 
   
-      <div className="text-base md:text-lg lg:text-[1rem] 2xl:text-2xl animate-[fade-in-bottom_2s_cubic-bezier(0.39,0.575,0.565,1)_1.1s_both] font-light flex flex-col text-[#FFFFFF] font-body max-w-2xl 2xl:max-w-2xl">
+      <div className="text-base md:text-lg lg:text-[1rem]  animate-[fade-in-bottom_2s_cubic-bezier(0.39,0.575,0.565,1)_1.1s_both] font-light flex flex-col text-[#FFFFFF] font-body max-w-2xl ">
         <p>
           I build clean, scalable web experiences with a strong focus on UX,{" "}
           <br className="hidden md:block" />

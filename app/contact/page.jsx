@@ -1,7 +1,9 @@
+  
 "use client"
 import { useState } from "react"
 import DotGrid from "@/component/animations/DotGrid"
 import Navbar from "@/component/Navbar"
+import Footer from "@/component/Footer" 
 export default function Contact() {
 const [form, setform] = useState({name:"",email:"",message:""})
 
@@ -24,8 +26,8 @@ const handleChange = (e) => {
 };
 
 return (
-  <div className="relative w-screen h-screen bg-black">
-    <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div><div className="absolute left-0 right-0 top-[-10%] h-[1000px] w-[1000px] rounded-full bg-[radial-gradient(circle_400px_at_50%_300px,#fbfbfb36,#000)]">
+    <div className="absolute top-0 z-[-2]  h-full w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
+  <div className="relative w-screen h-screen">
 {/*    
       <div className="absolute inset-0 z-0">
         <DotGrid
@@ -47,69 +49,109 @@ return (
 
 <div className=" absolute z-10 mt-3 w-full"> 
 
-<section className="text-zinc-400 body-font relative min-h-screen flex items-center justify-center">
-  <div className="container px-5 py-24 mx-auto">
-    {/* Header with your Shiny Text style logic */}
+
+
+
+
+<section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
+  
+
+  <div className="container px-5 mx-auto relative z-10 animate-[fadeInUp_1s_ease-out_both]">
+
     <div className="flex flex-col text-center w-full mb-12">
-      <h1 className="sm:text-4xl text-3xl font-bold title-font mb-4 text-white">
+      <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-white">
         Get In Touch
       </h1>
-      <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-zinc-500">
-        Have a project in mind? Let's build something extraordinary together.
+      <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-zinc-500 font-light">
+        Currently seeking new opportunities and creative partnerships.
       </p>
     </div>
 
-    {/* Form Container: Set to lg:w-1/2 for Half Width */}
-    <div className="lg:w-1/2 md:w-2/3 mx-auto bg-white/2 backdrop-blur-xl border border-white/10 p-8 rounded-3xl shadow-2xl relative overflow-hidden">
+
+    <div className="lg:w-[600px] md:w-2/3 mx-auto relative group/card">
       
-      {/* Background Ambient Glow */}
-      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-64 h-64 bg-cyan-500/10 blur-[100px] pointer-events-none" />
-      
+ 
+      <div className="absolute -inset-0.5 bg-gradient-to-r from-white/10 to-gray-500/10 rounded-3xl blur opacity-0 group-hover/card:opacity-100 transition duration-500"></div>
 
-      
-      <div className="flex flex-wrap -m-2 relative z-10">
-        {/* Name Input */}
-        <div className="p-2 w-1/2">
-          <div className="relative group">
-            <label htmlFor="name" className="leading-7 text-sm text-zinc-500 group-focus-within:text-cyan-400 transition-colors">Name</label>
-            <input type="text" onChange={handleChange} id="name" value= {form.name} name="name" 
-              className="w-full bg-white/5 rounded-xl border border-white/10 focus:border-cyan-500/50 focus:bg-white/8 focus:ring-2 focus:ring-cyan-500/20 text-base outline-none text-white py-2 px-4 leading-8 transition-all duration-300 ease-in-out" />
+      <div className="relative bg-zinc-950/80 backdrop-blur-2xl border border-white/10 p-8 md:p-12 rounded-3xl shadow-2xl">
+        
+        <div className="flex flex-wrap -m-2">
+
+          <div className="p-2 w-full md:w-1/2 animate-[fadeInUp_1s_ease-out_200ms_both]">
+            <div className="relative group/input">
+              <input 
+                type="text" 
+                name="name" 
+                id="name"
+                value={form.name}
+                onChange={handleChange}
+                placeholder=" "
+                className="peer w-full bg-white/5 rounded-xl border border-white/10 focus:border-white/50 focus:bg-white/10 focus:ring-4 focus:ring-white/5 text-base outline-none text-white py-3 px-4 transition-all duration-300 placeholder-transparent" 
+              />
+              <label htmlFor="name" className="absolute left-4 top-3 text-zinc-500 text-base transition-all duration-300 pointer-events-none peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-6 peer-focus:text-xs peer-focus:text-white/80 peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-xs">
+                Your Name
+              </label>
+            </div>
           </div>
-        </div>
 
-        {/* Email Input */}
-        <div className="p-2 w-1/2">
-          <div className="relative group">
-            <label htmlFor="email" className="leading-7 text-sm text-zinc-500 group-focus-within:text-cyan-400 transition-colors">Email</label>
-            <input type="email" onChange={handleChange} id="email" value= {form.email} name="email" 
-              className="w-full bg-white/5 rounded-xl border border-white/10 focus:border-cyan-500/50 focus:bg-white/8 focus:ring-2 focus:ring-cyan-500/20 text-base outline-none text-white py-2 px-4 leading-8 transition-all duration-300 ease-in-out" />
+  
+          <div className="p-2 w-full md:w-1/2 animate-[fadeInUp_1s_ease-out_400ms_both]">
+            <div className="relative group/input">
+              <input 
+                type="email" 
+                name="email" 
+                id="email"
+                value={form.email}
+                onChange={handleChange}
+                placeholder=" "
+                className="peer w-full bg-white/5 rounded-xl border border-white/10 focus:border-white/50 focus:bg-white/10 focus:ring-4 focus:ring-white/5 text-base outline-none text-white py-3 px-4 transition-all duration-300 placeholder-transparent" 
+              />
+              <label htmlFor="email" className="absolute left-4 top-3 text-zinc-500 text-base transition-all duration-300 pointer-events-none peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-6 peer-focus:text-xs peer-focus:text-white/80 peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:not(:placeholder-shown)]:text-xs">
+                Email Address
+              </label>
+            </div>
           </div>
-        </div>
 
-        {/* Message Textarea */}
-        <div className="p-2 w-full">
-          <div className="relative group">
-            <label htmlFor="message" className="leading-7 text-sm text-zinc-500 group-focus-within:text-cyan-400 transition-colors">Message</label>
-            <textarea id="message " onChange={handleChange}value={form.message} name="message" 
-              className="w-full bg-white/5 rounded-xl border border-white/10 focus:border-cyan-500/50 focus:bg-white/8 focus:ring-2 focus:ring-cyan-500/20 h-32 text-base outline-none text-white py-2 px-4 resize-none leading-6 transition-all duration-300 ease-in-out" />
+          <div className="p-2 w-full animate-[fadeInUp_1s_ease-out_600ms_both]">
+            <div className="relative group/input">
+              <textarea 
+                name="message" 
+                id="message"
+                value={form.message}
+                onChange={handleChange}
+                placeholder=" "
+                className="peer w-full bg-white/5 rounded-xl border border-white/10 focus:border-white/50 focus:bg-white/10 focus:ring-4 focus:ring-white/5 h-32 text-base outline-none text-white py-3 px-4 resize-none transition-all duration-300 placeholder-transparent"
+              />
+              <label htmlFor="message" className="absolute left-4 top-3 text-zinc-500 text-base transition-all duration-300 pointer-events-none peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-6 peer-focus:text-xs peer-focus:text-white/80 peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-xs">
+                Tell me about your project
+              </label>
+            </div>
           </div>
+
+
+          <div className="p-2 w-full mt-6 animate-[fadeInUp_1s_ease-out_800ms_both]">
+            <button 
+              onClick={handlesubmit} 
+              className="w-full relative group/btn overflow-hidden rounded-xl py-3 bg-white text-black font-semibold transition-all duration-500 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-white/20"
+            >
+              <div className="absolute inset-0 bg-white/30 translate-x-full group-hover/btn:translate-x-0 transition-transform duration-700"></div>
+              <span className="relative z-10 flex items-center justify-center gap-2">
+                Send Message
+                <svg className="w-4 h-4 transition-transform duration-500 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </span>
+            </button>
+          </div>
+
         </div>
-
-        {/* Themed Submit Button */}
-        <div className="p-2 w-full mt-4">
-          <button onClick={handlesubmit} onChange={handleChange} className="flex mx-auto group relative items-center justify-center px-10 py-3 bg-cyan-500 text-black font-bold rounded-xl hover:scale-105 hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] transition-all duration-300 active:scale-95 overflow-hidden">
-            <span className="relative z-10">Send Message</span>
-            <div className="absolute inset-0 bg-white/20 translate-x-full group-hover:translate-x-full transition-transform duration-500" />
-          </button>
-        </div>
-
-
       </div>
     </div>
   </div>
 </section>
 
 
+
+
+<Footer/>
 </div>
 </div>
 </div>

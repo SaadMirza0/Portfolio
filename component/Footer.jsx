@@ -12,15 +12,15 @@ export default function Footer() {
         Saad Mirza
       </span>
       <p className="text-[10px] 2xl:text-[0.9rem] uppercase tracking-[0.2em] text-white/30 font-medium">
-        © 2026 · Digital Architect
+        © 2026 · Full-Stack Webdeveloper
       </p>
     </div>
 
     
     <ul className="flex gap-8 text-[11px] 2xl:text-[1.2rem] uppercase tracking-widest font-medium text-white/50 animate-[fadeInUp_1s_ease-out_200ms_both]">
-      {['Home', 'About', 'Work', 'Contact'].map((item) => (
+      {['Home', 'about', 'contact'].map((item) => (
         <li key={item}>
-          <a href={`#${item.toLowerCase()}`} 
+          <a href={item == 'Home' ? '/': `/${item.toLowerCase()}`} 
              className="hover:text-white transition-colors duration-300">
             {item}
           </a>

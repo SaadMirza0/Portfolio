@@ -2,7 +2,7 @@
 import DotGrid from "@/component/animations/DotGrid";
 import Navbar from "@/component/Navbar";
 import SplitText from "@/component/animations/SplitText";
-import Footer from "@/component/Footer";
+import Footer from "@/component/Footer" 
 
 export default function AboutPage() {
   const skills = [
@@ -56,44 +56,57 @@ export default function AboutPage() {
 
       <div className="relative z-10 w-full flex flex-col lg:flex-row min-h-screen pt-20 md:pt-24 lg:pt-0">
         {/* Left side - About Info */}
-        <div className="w-full lg:w-1/2 text-white flex flex-col justify-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 lg:py-0">
-          {/* Header Section */}
-          <div className="overflow-hidden mb-6 sm:mb-8 lg:mb-10">
-            <SplitText
-              splitType="words"
-              delay={200}
-              className="text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[6rem] font-heading font-bold tracking-tighter opacity-90 leading-none"
-              text="INFO"
-            />
-          </div>
+      
+<div className="w-full lg:w-1/2 text-white flex flex-col justify-center px-6 sm:px-10 md:px-12 lg:px-16 py-12 lg:py-0 selection:bg-white/10">
+  {/* Header Section - Reduced leading to make the "INFO" text feel like a solid block */}
+  <div className="overflow-hidden mb-8 lg:mb-12">
+    <SplitText
+      splitType="words"
+      delay={200}
+      className="text-6xl xs:text-7xl sm:text-8xl md:text-9xl lg:text-[7rem] xl:text-[8rem] font-heading font-bold tracking-tighter opacity-90 leading-[0.85]"
+      text="INFO"
+    />
+  </div>
 
-          <div className="relative border-l border-white/10 pl-4 sm:pl-6 md:pl-8 lg:mt-20 lg:pl-10 xl:pl-8">
-            <p className="animate-in fade-in slide-in-from-bottom-4 duration-1000 fill-mode-forwards font-light text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[1.8rem] leading-relaxed md:leading-[1.4] max-w-xl opacity-80">
-              I'm <span className="font-medium text-white opacity-100">Saad Mirza</span>, 
-              a 20-year-old developer crafting digital experiences where 
-              <span className="italic"> logic meets aesthetic</span>.
-            </p>
-            <p className="animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300 fill-mode-forwards mt-4 sm:mt-6 md:mt-8 font-light text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[1.3rem] leading-relaxed md:leading-[1.4] max-w-xl opacity-80">
-              Currently based in Pakistan, I partner with forward-thinking brands to 
-              build high-performance interfaces defined by technical precision.
-            </p>
-            <div className="mt-6 sm:mt-8 md:mt-10 flex flex-wrap gap-x-3 sm:gap-x-4 md:gap-x-6 gap-y-2 uppercase tracking-widest text-[8px] xs:text-[9px] sm:text-[10px] md:text-xs font-medium text-white/50 animate-[fadeIn_1s_ease-out_600ms_both]">
-              <span className="hover:text-cyan-400 transition-colors duration-300 cursor-default">Web Development</span>
-              <span className="w-1 h-1 rounded-full bg-white/20 self-center"></span>
-              <span className="hover:text-purple-400 transition-colors duration-300 cursor-default">UI/UX Design</span>
-              <span className="w-1 h-1 rounded-full bg-white/20 self-center"></span> 
-              <span className="hover:text-cyan-400 transition-colors duration-300 cursor-default">Frontend Architecture</span>
-            </div>
-          </div>
-        </div>
+  {/* Content Section with a more prominent vertical line */}
+  <div className="relative border-l-[1.5px] border-white/5 pl-6 sm:pl-8 lg:mt-12 lg:pl-12">
+    
+    {/* First Paragraph - Increased font size slightly for impact on desktop */}
+    <p className="animate-in fade-in slide-in-from-bottom-4 duration-1000 fill-mode-forwards font-light text-base sm:text-xl md:text-2xl lg:text-[1.5rem] xl:text-[1.75rem] leading-snug md:leading-relaxed max-w-[28ch] sm:max-w-xl opacity-80">
+      I'm <span className="font-medium text-white opacity-100 decoration-white/20 underline-offset-4 hover:underline transition-all cursor-default">Saad Mirza</span>, 
+      a 20-year-old developer crafting digital experiences where 
+      <span className="italic font-normal"> logic meets aesthetic</span>.
+    </p>
 
-        {/* Right side - Skills Section */}
+    {/* Second Paragraph - Tightened slightly to create visual hierarchy with the first */}
+    <p className="animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300 fill-mode-forwards mt-6 sm:mt-8 font-light text-sm sm:text-lg md:text-xl lg:text-[1.1rem] xl:text-[1.25rem] leading-relaxed max-w-lg opacity-60 hover:opacity-90 transition-opacity duration-500">
+      Currently based in Pakistan, I partner with forward-thinking brands to 
+      build high-performance interfaces defined by technical precision.
+    </p>
+
+    {/* Capabilities Tags - Enhanced with cleaner dot separators */}
+    <div className="mt-10 sm:mt-12 flex flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-3 uppercase tracking-[0.2em] text-[9px] sm:text-[10px] md:text-xs font-semibold text-white/40 animate-[fadeIn_1s_ease-out_600ms_both]">
+      <span className="hover:text-cyan-400 transition-all duration-300 cursor-default hover:tracking-[0.25em]">Web Development</span>
+      <div className="h-px w-4 bg-white/10 hidden sm:block"></div> {/* Modern dash instead of dot */}
+      <span className="hover:text-purple-400 transition-all duration-300 cursor-default hover:tracking-[0.25em]">UI/UX Design</span>
+      <div className="h-px w-4 bg-white/10 hidden sm:block"></div>
+      <span className="hover:text-cyan-400 transition-all duration-300 cursor-default hover:tracking-[0.25em]">Frontend Architecture</span>
+    </div>
+  </div>
+</div>
+
+
     <div className="w-full lg:w-1/2 text-white flex items-center justify-center px-4 sm:px-6 md:px-8  lg:px-0 py-8 lg:py-0">
   <div className="w-full max-w-2xl xl:max-w-3xl">
     <div className="flex flex-col items-center justify-center gap-3 sm:gap-4 md:gap-2 font-medium font-heading">
-        <div className="h-60 w-60 border mb-30 rounded-2xl">Hello i am here an image</div>
-      <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-center mb-4 sm:mb-6">
-        Techs
+
+
+      {/* Here is the div which is up side of the techs for the pic or any other componenet */}
+        {/* <div className="h-60 w-60 border mb-30 rounded-2xl">Hello i am here an image</div> */}
+
+
+      <div className="text-lg sm:text-xl md:text-1xl lg:text-1xl  font-medium text-center mb-1 sm:mb-1">
+        Technologies
       </div>
       
       {/* Row 1 */}
@@ -283,7 +296,7 @@ export default function AboutPage() {
       </div>
       
       <div className="relative z-10 w-full mt-8 sm:mt-12 md:mt-16 lg:mt-20">
-        <Footer />
+     <Footer/>
       </div>
     </div>
   );
