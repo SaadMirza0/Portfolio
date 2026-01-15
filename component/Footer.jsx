@@ -36,7 +36,7 @@ export default function Footer() {
         <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-indigo-500 transition-all duration-300 group-hover:w-full" />
       </a>
       
-      <a href="https://github.com" target="_blank" className="group relative">
+      <a href="https://github.com/SaadMirza0" target="_blank" className="group relative">
         <span className="text-xs 2xl:text-[1.2rem] text-white/50 group-hover:text-cyan-400 transition-colors duration-300">GitHub</span>
         <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-cyan-500 transition-all duration-300 group-hover:w-full" />
       </a>
