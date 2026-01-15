@@ -175,104 +175,131 @@ export default function AboutPage() {
 
       {/* Row 2 */}
       <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-2 w-full">
-        {skills.slice(3, 6).map((skill, index) => (
-          <div key={index} className="group relative inline-block">
-            <div
-              className="relative px-3 2xl:px-5 2xl:py-3 xs:px-4 sm:px-5 md:px-6 py-1.5 xs:py-2 border border-white/10 bg-zinc-900/50 backdrop-blur-sm rounded-md 
-              group-hover:border-cyan-500/50 group-hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] 
-              group-hover:-translate-y-1 transition-all duration-300"
-            >
-              <span className="md:text-1xl 2xl:text-3xl   bg-gradient-to-r from-white to-white/60 group-hover:from-cyan-400 group-hover:to-white bg-clip-text text-transparent transition-all duration-300 whitespace-nowrap">
-                {skill.name}
+  {skills.slice(0, 3).map((skill, index) => (
+    <div key={index} className="group relative inline-block">
+      <div
+        className="relative px-3 2xl:px-5 2xl:py-3 xs:px-4 sm:px-5 md:px-6 py-1.5 xs:py-2 border border-white/10 bg-zinc-900/50 backdrop-blur-sm rounded-md 
+        group-hover:border-cyan-500/50 group-hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] 
+        group-hover:-translate-y-1 transition-all duration-300"
+      >
+        <span className="text-xs xs:text-sm sm:text-base md:text-lg 2xl:text-3xl bg-gradient-to-r from-white to-white/60 group-hover:from-cyan-400 group-hover:to-white bg-clip-text text-transparent transition-all duration-300 whitespace-nowrap">
+          {skill.name}
+        </span>
+      </div>
+
+      {/* Desktop Tooltip - Only shows on lg screens and above */}
+      <div
+        className="hidden lg:block absolute bottom-full left-1/2 -translate-x-1/2 mb-4 
+        w-48 sm:w-56 md:w-64 
+        opacity-0 
+        translate-y-2.5 
+        rotate-x-15
+        scale-[0.98]
+        pointer-events-none z-50 origin-bottom
+        perspective-[1000px]
+        group-hover:opacity-100 
+        group-hover:translate-y-0 
+        group-hover:rotate-x-0 
+        group-hover:scale-100
+        transition-all duration-400 ease-[cubic-bezier(0.05,0.7,0.1,1)]"
+      >
+        <div className="relative overflow-hidden bg-[#0c0c0e]/95 backdrop-blur-xl border border-white/10 p-3 sm:p-4 rounded-xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)]">
+          <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-500/80 to-transparent animate-pulse" />
+          <div className="relative z-10 space-y-1.5">
+            <div className="flex items-center gap-2">
+              <div className="h-1.5 w-1.5 rounded-full bg-cyan-500 shadow-[0_0_8px_#06b6d4]" />
+              <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-zinc-500 font-bold">
+                Insights
               </span>
             </div>
-
-            {/* Desktop Tooltip */}
-            <div
-              className="hidden lg:block absolute bottom-full left-1/2 -translate-x-1/2 mb-4 
-              w-48 sm:w-56 md:w-64 
-              opacity-0 
-              translate-y-2.5 
-              rotate-x-15
-              scale-[0.98]
-              pointer-events-none z-50 origin-bottom
-              perspective-[1000px]
-              group-hover:opacity-100 
-              group-hover:translate-y-0 
-              group-hover:rotate-x-0 
-              group-hover:scale-100
-              transition-all duration-400 ease-[cubic-bezier(0.05,0.7,0.1,1)]"
-            >
-              <div className="relative overflow-hidden bg-[#0c0c0e]/95 backdrop-blur-xl border border-white/10 p-3 sm:p-4 rounded-xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)]">
-                <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-500/80 to-transparent animate-pulse" />
-                <div className="relative z-10 space-y-1">
-                  <div className="flex items-center gap-2">
-                    <div className="h-1.5 w-1.5 rounded-full bg-cyan-500 shadow-[0_0_8px_#06b6d4]" />
-                    <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-zinc-500 font-bold">
-                      Insights
-                    </span>
-                  </div>
-                  <p className="text-[11px] sm:text-[12px] leading-relaxed text-zinc-300 font-medium">
-                    {skill.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-
+            <p className="text-[11px] sm:text-[12px] leading-relaxed text-zinc-300 font-medium">
+              {skill.description}
+            </p>
           </div>
-        ))}
+        </div>
       </div>
+
+      {/* Mobile Tooltip - Shows on screens smaller than lg (1024px) */}
+      <div className="lg:hidden absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-40 xs:w-48 sm:w-56 scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-200 origin-bottom z-50 pointer-events-none">
+        <div className="bg-zinc-900/95 backdrop-blur-sm border border-white/10 text-white p-3 rounded-lg shadow-xl">
+          <div className="flex items-center gap-2 mb-1">
+            <div className="h-1.5 w-1.5 rounded-full bg-cyan-500" />
+            <span className="text-[9px] xs:text-[10px] uppercase tracking-wider text-zinc-500 font-bold">
+              Insights
+            </span>
+          </div>
+          <p className="text-[10px] xs:text-[10.5px] sm:text-[11px] leading-relaxed text-zinc-300">
+            {skill.description}
+          </p>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
 
       {/* Row 3 */}
-      <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-2  w-full">
-        {skills.slice(6, 9).map((skill, index) => (
-          <div key={index} className="group relative inline-block">
-            <div
-              className="relative px-3 2xl:px-5 2xl:py-3 xs:px-4 sm:px-5 md:px-6 py-1.5 xs:py-2 border border-white/10 bg-zinc-900/50 backdrop-blur-sm rounded-md 
-              group-hover:border-cyan-500/50 group-hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] 
-              group-hover:-translate-y-1 transition-all duration-300"
-            >
-              <span className="md:text-1xl 2xl:text-3xl   bg-gradient-to-r from-white to-white/60 group-hover:from-cyan-400 group-hover:to-white bg-clip-text text-transparent transition-all duration-300 whitespace-nowrap">
-                {skill.name}
+       <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-2 w-full">
+  {skills.slice(0, 3).map((skill, index) => (
+    <div key={index} className="group relative inline-block">
+      <div
+        className="relative px-3 2xl:px-5 2xl:py-3 xs:px-4 sm:px-5 md:px-6 py-1.5 xs:py-2 border border-white/10 bg-zinc-900/50 backdrop-blur-sm rounded-md 
+        group-hover:border-cyan-500/50 group-hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] 
+        group-hover:-translate-y-1 transition-all duration-300"
+      >
+        <span className="text-xs xs:text-sm sm:text-base md:text-lg 2xl:text-3xl bg-gradient-to-r from-white to-white/60 group-hover:from-cyan-400 group-hover:to-white bg-clip-text text-transparent transition-all duration-300 whitespace-nowrap">
+          {skill.name}
+        </span>
+      </div>
+
+      {/* Desktop Tooltip - Only shows on lg screens and above */}
+      <div
+        className="hidden lg:block absolute bottom-full left-1/2 -translate-x-1/2 mb-4 
+        w-48 sm:w-56 md:w-64 
+        opacity-0 
+        translate-y-2.5 
+        rotate-x-15
+        scale-[0.98]
+        pointer-events-none z-50 origin-bottom
+        perspective-[1000px]
+        group-hover:opacity-100 
+        group-hover:translate-y-0 
+        group-hover:rotate-x-0 
+        group-hover:scale-100
+        transition-all duration-400 ease-[cubic-bezier(0.05,0.7,0.1,1)]"
+      >
+        <div className="relative overflow-hidden bg-[#0c0c0e]/95 backdrop-blur-xl border border-white/10 p-3 sm:p-4 rounded-xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)]">
+          <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-500/80 to-transparent animate-pulse" />
+          <div className="relative z-10 space-y-1.5">
+            <div className="flex items-center gap-2">
+              <div className="h-1.5 w-1.5 rounded-full bg-cyan-500 shadow-[0_0_8px_#06b6d4]" />
+              <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-zinc-500 font-bold">
+                Insights
               </span>
             </div>
-
-            {/* Desktop Tooltip */}
-            <div
-              className="hidden lg:block absolute bottom-full left-1/2 -translate-x-1/2 mb-4 
-              w-48 sm:w-56 md:w-64 
-              opacity-0 
-              translate-y-2.5 
-              rotate-x-15
-              scale-[0.98]
-              pointer-events-none z-50 origin-bottom
-              perspective-[1000px]
-              group-hover:opacity-100 
-              group-hover:translate-y-0 
-              group-hover:rotate-x-0 
-              group-hover:scale-100
-              transition-all duration-400 ease-[cubic-bezier(0.05,0.7,0.1,1)]"
-            >
-              <div className="relative overflow-hidden bg-[#0c0c0e]/95 backdrop-blur-xl border border-white/10 p-3 sm:p-4 rounded-xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)]">
-                <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-500/80 to-transparent animate-pulse" />
-                <div className="relative z-10 space-y-1">
-                  <div className="flex items-center gap-2">
-                    <div className="h-1.5 w-1.5 rounded-full bg-cyan-500 shadow-[0_0_8px_#06b6d4]" />
-                    <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-zinc-500 font-bold">
-                      Insights
-                    </span>
-                  </div>
-                  <p className="text-[11px] sm:text-[12px] leading-relaxed text-zinc-300 font-medium">
-                    {skill.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-
+            <p className="text-[11px] sm:text-[12px] leading-relaxed text-zinc-300 font-medium">
+              {skill.description}
+            </p>
           </div>
-        ))}
+        </div>
       </div>
+
+      {/* Mobile Tooltip - Shows on screens smaller than lg (1024px) */}
+      <div className="lg:hidden absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-40 xs:w-48 sm:w-56 scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-200 origin-bottom z-50 pointer-events-none">
+        <div className="bg-zinc-900/95 backdrop-blur-sm border border-white/10 text-white p-3 rounded-lg shadow-xl">
+          <div className="flex items-center gap-2 mb-1">
+            <div className="h-1.5 w-1.5 rounded-full bg-cyan-500" />
+            <span className="text-[9px] xs:text-[10px] uppercase tracking-wider text-zinc-500 font-bold">
+              Insights
+            </span>
+          </div>
+          <p className="text-[10px] xs:text-[10.5px] sm:text-[11px] leading-relaxed text-zinc-300">
+            {skill.description}
+          </p>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
 
       {/* Row 4 */}
       <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 w-full">

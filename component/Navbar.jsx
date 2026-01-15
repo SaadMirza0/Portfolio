@@ -87,7 +87,9 @@ export default function Navbar() {
   <ul className="relative z-50 flex flex-col gap-10 text-center">
     {navlinks.map((item, index) => {
  
-      const href = item.name === 'Home' ? '/' : `/${item.toLowerCase()}`;
+   
+  const href = item === 'Home' ? '/' : `/${item.toLowerCase()}`;
+  
       console.log(href)
       return (
         <li 
