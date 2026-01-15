@@ -175,7 +175,7 @@ export default function AboutPage() {
 
       {/* Row 2 */}
       <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-2 w-full">
-  {skills.slice(0, 3).map((skill, index) => (
+  {skills.slice(3, 6).map((skill, index) => (
     <div key={index} className="group relative inline-block">
       <div
         className="relative px-3 2xl:px-5 2xl:py-3 xs:px-4 sm:px-5 md:px-6 py-1.5 xs:py-2 border border-white/10 bg-zinc-900/50 backdrop-blur-sm rounded-md 
@@ -239,7 +239,7 @@ export default function AboutPage() {
 
       {/* Row 3 */}
        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-2 w-full">
-  {skills.slice(0, 3).map((skill, index) => (
+  {skills.slice(6, 9).map((skill, index) => (
     <div key={index} className="group relative inline-block">
       <div
         className="relative px-3 2xl:px-5 2xl:py-3 xs:px-4 sm:px-5 md:px-6 py-1.5 xs:py-2 border border-white/10 bg-zinc-900/50 backdrop-blur-sm rounded-md 
