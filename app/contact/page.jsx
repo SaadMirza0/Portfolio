@@ -4,44 +4,29 @@ import { useState } from "react"
 import DotGrid from "@/component/animations/DotGrid"
 import Navbar from "@/component/Navbar"
 import Footer from "@/component/Footer" 
+import {SaveMessage} from "@/actions"
 export default function Contact() {
-const [form, setform] = useState({name:"",email:"",message:""})
+const [msg, setmsg] = useState(" ")
 
+async function handleSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData);
 
-const handlesubmit = (e) => {
-  e.preventDefault(); 
-  console.log(form);
-
-  setform({name: "",email: "",message: ""});
-
-};
-const handleChange = (e) => {
-
-  const { name, value } = e.target;
-
-  setform((prev) => ({
-    ...prev,          
-    [name]: value     
-  }));
-};
+    const res = await SaveMessage(data); // Call your action directly
+    
+    if (res.success) {
+      setmsg("Message sent successfully!");
+      e.target.reset(); 
+    } else {
+      setmsg("Error sending data.");
+    }
+  }
 
 return (
     <div className="absolute top-0 z-[-2]  h-full w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
   <div className="relative w-screen h-screen">
-{/*    
-      <div className="absolute inset-0 z-0">
-        <DotGrid
-          dotSize={5}
-          gap={15}
-          baseColor="#020617"
-          activeColor="#262661"
-          proximity={120}
-          shockRadius={250}
-          shockStrength={5}
-          resistance={750}
-          returnDuration={1.5}
-        />
-      </div> */}
+
          <nav className="absolute z-40"  >
               <Navbar />
               </nav>
@@ -74,17 +59,15 @@ return (
       <div className="absolute -inset-0.5 bg-gradient-to-r from-white/10 to-gray-500/10 rounded-3xl blur opacity-0 group-hover/card:opacity-100 transition duration-500"></div>
 
       <div className="relative bg-zinc-950/80 backdrop-blur-2xl border border-white/10 p-8 md:p-12 rounded-3xl shadow-2xl">
-        
+        <form onSubmit={handleSubmit}>
         <div className="flex flex-wrap -m-2">
 
           <div className="p-2 w-full md:w-1/2 animate-[fadeInUp_1s_ease-out_200ms_both]">
             <div className="relative group/input">
               <input 
                 type="text" 
-                name="name" 
-                id="name"
-                value={form.name}
-                onChange={handleChange}
+                name="username" 
+       
                 placeholder=" "
                 className="peer w-full bg-white/5 rounded-xl border border-white/10 focus:border-white/50 focus:bg-white/10 focus:ring-4 focus:ring-white/5 text-base outline-none text-white py-3 px-4 transition-all duration-300 placeholder-transparent" 
               />
@@ -100,9 +83,7 @@ return (
               <input 
                 type="email" 
                 name="email" 
-                id="email"
-                value={form.email}
-                onChange={handleChange}
+       
                 placeholder=" "
                 className="peer w-full bg-white/5 rounded-xl border border-white/10 focus:border-white/50 focus:bg-white/10 focus:ring-4 focus:ring-white/5 text-base outline-none text-white py-3 px-4 transition-all duration-300 placeholder-transparent" 
               />
@@ -116,9 +97,7 @@ return (
             <div className="relative group/input">
               <textarea 
                 name="message" 
-                id="message"
-                value={form.message}
-                onChange={handleChange}
+
                 placeholder=" "
                 className="peer w-full bg-white/5 rounded-xl border border-white/10 focus:border-white/50 focus:bg-white/10 focus:ring-4 focus:ring-white/5 h-32 text-base outline-none text-white py-3 px-4 resize-none transition-all duration-300 placeholder-transparent"
               />
@@ -131,7 +110,7 @@ return (
 
           <div className="p-2 w-full mt-6 animate-[fadeInUp_1s_ease-out_800ms_both]">
             <button 
-              onClick={handlesubmit} 
+              type="submit"
               className="w-full relative group/btn overflow-hidden rounded-xl py-3 bg-white text-black font-semibold transition-all duration-500 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-white/20"
             >
               <div className="absolute inset-0 bg-white/30 translate-x-full group-hover/btn:translate-x-0 transition-transform duration-700"></div>
@@ -141,8 +120,9 @@ return (
               </span>
             </button>
           </div>
-
+{msg && <p className="mt-4 font-bold text-center">{msg}</p>}
         </div>
+        </form>
       </div>
     </div>
   </div>

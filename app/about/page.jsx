@@ -58,7 +58,6 @@ export default function AboutPage() {
         {/* Left side - About Info */}
       
 <div className="w-full lg:w-1/2 text-white flex flex-col justify-center px-6 sm:px-10 md:px-12 lg:px-16 py-12 lg:py-0 selection:bg-white/10">
-  {/* Header Section - Reduced leading to make the "INFO" text feel like a solid block */}
   <div className="overflow-hidden mb-8 lg:mb-12">
     <SplitText
       splitType="words"
@@ -67,24 +66,17 @@ export default function AboutPage() {
       text="INFO"
     />
   </div>
-
-  {/* Content Section with a more prominent vertical line */}
   <div className="relative border-l-[1.5px] border-white/5 pl-6 sm:pl-8 lg:mt-12 lg:pl-12">
     
-    {/* First Paragraph - Increased font size slightly for impact on desktop */}
     <p className="animate-in fade-in slide-in-from-bottom-4 duration-1000 fill-mode-forwards font-light text-base sm:text-xl md:text-2xl lg:text-[1.5rem] xl:text-[1.75rem] leading-snug md:leading-relaxed max-w-[28ch] sm:max-w-xl opacity-80">
       I'm <span className="font-medium text-white opacity-100 decoration-white/20 underline-offset-4 hover:underline transition-all cursor-default">Saad Mirza</span>, 
-      a 20-year-old developer crafting digital experiences where 
+      a 18-year-old <br/>thriving on the challenge of crafting digital experiences where <br/> 
       <span className="italic font-normal"> logic meets aesthetic</span>.
     </p>
-
-    {/* Second Paragraph - Tightened slightly to create visual hierarchy with the first */}
     <p className="animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300 fill-mode-forwards mt-6 sm:mt-8 font-light text-sm sm:text-lg md:text-xl lg:text-[1.1rem] xl:text-[1.25rem] leading-relaxed max-w-lg opacity-60 hover:opacity-90 transition-opacity duration-500">
-      Currently based in Pakistan, I partner with forward-thinking brands to 
-      build high-performance interfaces defined by technical precision.
+       I solve real-world problems through minimalist, interactive engineering. I believe in the power of refined aesthetics building clean, high-performance interfaces defined by technical precision.
     </p>
 
-    {/* Capabilities Tags - Enhanced with cleaner dot separators */}
     <div className="mt-10 sm:mt-12 flex flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-3 uppercase tracking-[0.2em] text-[9px] sm:text-[10px] md:text-xs font-semibold text-white/40 animate-[fadeIn_1s_ease-out_600ms_both]">
       <span className="hover:text-cyan-400 transition-all duration-300 cursor-default hover:tracking-[0.25em]">Web Development</span>
       <div className="h-px w-4 bg-white/10 hidden sm:block"></div> {/* Modern dash instead of dot */}
@@ -128,7 +120,7 @@ export default function AboutPage() {
         </span>
       </div>
 
-      {/* Desktop Tooltip (remains the same) */}
+ {/* description box */}
       <div className="hidden lg:block absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-48 sm:w-56 md:w-64 opacity-0 translate-y-2.5 rotate-x-15 scale-[0.98] pointer-events-none z-50 origin-bottom perspective-[1000px] group-hover:opacity-100 group-hover:translate-y-0 group-hover:rotate-x-0 group-hover:scale-100 transition-all duration-400 ease-[cubic-bezier(0.05,0.7,0.1,1)]">
         <div className="relative overflow-hidden bg-[#0c0c0e]/95 backdrop-blur-xl border border-white/10 p-3 sm:p-4 rounded-xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)]">
           <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-500/80 to-transparent animate-pulse" />
@@ -142,7 +134,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Mobile Tooltip - FIXED for Tap/Click */}
+   {/* mobile tooltip */}
       <div className="lg:hidden absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-40 xs:w-48 sm:w-56 scale-0 opacity-0 
         /* Shows on hover AND when active (tapped) */
         group-hover:scale-100 group-hover:opacity-100 

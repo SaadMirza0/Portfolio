@@ -44,7 +44,7 @@ export default function Footer() {
       
       <div className="flex items-center gap-2 pl-4 border-l border-white/10">
         <div className="h-1.5 w-1.5 2xl:h-3.5 2xl:w-3.5 rounded-full bg-emerald-500 animate-pulse" />
-        <span className="text-[10px] 2xl:text-[1.2rem] text-white/40 uppercase tracking-tighter">Available for hire</span>
+        <span className="text-[10px] 2xl:text-[1.2rem] text-white/40 uppercase tracking-tighter">Available for Everything</span>
       </div>
     </div>
 
