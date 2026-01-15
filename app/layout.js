@@ -1,6 +1,6 @@
 import "./globals.css";
 import Navbar from "../component/Navbar";
-
+import { Analytics } from "@vercel/analytics/next"
 import { Montserrat, Roboto } from 'next/font/google';
 
 export const montserrat = Montserrat({
@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
     
      
           {children}
-   
+   <Analytics/>
 </body>
     </html>
   );
