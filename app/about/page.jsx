@@ -108,7 +108,7 @@ export default function AboutPage() {
       <div className="text-lg sm:text-xl md:text-1xl lg:text-1xl  font-medium text-center mb-1 sm:mb-1">
         Technologies
       </div>
-      
+      <div className="flex md:hidden lg:hidden xl:hidden text-[0.5rem] text-gray-500 "> Hold to see about skill.</div>
       {/* Row 1 */}
 <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-2 w-full">
   {skills.slice(0, 3).map((skill, index) => (
