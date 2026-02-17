@@ -28,7 +28,7 @@ Welcome to my portfolio repository! I'm an aspiring Full-Stack Web Developer and
 
 ## 📄 My Resume
 
-You can view my full resume [https://docs.google.com/document/d/1rfVEFNvsIfHiz6YkRpvgEMWP7_911ePBgujrY6AmDnY/edit?usp=sharing]
+You can view my full resume [https://drive.google.com/file/d/10W1q30KGuht7BdCkOE0xzqaB4muYYOeQ/view?usp=sharing]
 
 
 ## 📊 GitHub Stats
