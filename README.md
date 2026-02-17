@@ -31,13 +31,6 @@ Welcome to my portfolio repository! I'm an aspiring Full-Stack Web Developer and
 You can view my full resume [https://drive.google.com/file/d/10W1q30KGuht7BdCkOE0xzqaB4muYYOeQ/view?usp=sharing]
 
 
-## 📊 GitHub Stats
-
-![Saad's GitHub Stats](https://github-readme-stats.vercel.app)
-
-![Saad's Top Languages](https://github-readme-stats.vercel.app)
-
-
 
 ---
 
