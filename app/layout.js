@@ -1,5 +1,4 @@
 import "./globals.css";
-import Navbar from "../component/Navbar";
 import { Analytics } from "@vercel/analytics/next"
 import { Montserrat, Roboto } from 'next/font/google';
 

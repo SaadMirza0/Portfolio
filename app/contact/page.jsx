@@ -1,7 +1,6 @@
   
 "use client"
 import { useState } from "react"
-import DotGrid from "@/component/animations/DotGrid"
 import Navbar from "@/component/Navbar"
 import Footer from "@/component/Footer" 
 import {SaveMessage} from "@/actions"
