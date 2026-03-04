@@ -68,11 +68,11 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="relative group animate-[fadeInUp_1s_ease-out_400ms_both]">
+                {/* <div className="relative group animate-[fadeInUp_1s_ease-out_400ms_both]">
                   <input type="text" name="subject" placeholder=" " className={inputClasses} />
                   <label className={labelClasses}>Project Subject</label>
                   <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-white transition-all duration-500 group-hover:w-full" />
-                </div>
+                </div> */}
 
                 <div className="relative group animate-[fadeInUp_1s_ease-out_500ms_both]">
                   <textarea name="message" required placeholder=" " className={`${inputClasses} h-32 resize-none`} />

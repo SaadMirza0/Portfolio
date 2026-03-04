@@ -2,10 +2,12 @@
 
 import {React,useState} from "react";
 import Link from "next/link";
-// import DownloadButton from "./smallcom/DownloadButton";
+import DownloadButton from "./smallcom/DownloadButton";
 import ShinyText from "./animations/Textshine";
 import { usePathname } from "next/navigation";
 import Button from "./smallcom/Buttons";
+
+
 export default function Navbar() {
   const pathname = usePathname();
   const [isopen, setisopen] = useState(false)
