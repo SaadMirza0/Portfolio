@@ -2,10 +2,10 @@
 
 import {React,useState} from "react";
 import Link from "next/link";
-import DownloadButton from "./smallcom/DownloadButton";
+// import DownloadButton from "./smallcom/DownloadButton";
 import ShinyText from "./animations/Textshine";
 import { usePathname } from "next/navigation";
-
+import Button from "./smallcom/Buttons";
 export default function Navbar() {
   const pathname = usePathname();
   const [isopen, setisopen] = useState(false)
@@ -16,7 +16,7 @@ export default function Navbar() {
   
   {/* Logo/Name - Left side */}
   <span className="text-lg sm:text-xl md:text-2xl lg:text-[2rem] font-heading shrink-0 text-white">
-   SM
+   Saad
   </span>
 
   {/* Desktop Navigation */}
@@ -63,9 +63,9 @@ export default function Navbar() {
   {/* Right side - Download Button & Hamburger */}
   <div className="flex items-center gap-3 sm:gap-4">
     {/* Download Button - Hidden on mobile, visible on md+ */}
-    <div className="hidden md:block">
-      <DownloadButton />
-    </div>
+   <div className="hidden md:block w-[200px] flex-shrink-0 overflow-visible">
+    <Button />
+  </div>
     
     {/* Mobile Hamburger Menu */}
     <button 
@@ -128,7 +128,7 @@ export default function Navbar() {
 
       {/* Mobile Download Button */}
       <div className="mt-8">
-        <DownloadButton />
+        <Button />
       </div>
 
       {/* Close Menu Area */}

@@ -3,7 +3,6 @@ import { sql } from '@vercel/postgres';
 
 export async function SaveMessage(data) {
   try {
-    // Vercel Postgres uses backticks (`) with the sql helper
     await sql`
       INSERT INTO contacts (username, email, message) 
       VALUES (${data.username}, ${data.email}, ${data.message})
@@ -11,7 +10,7 @@ export async function SaveMessage(data) {
    
     return { success: true, Message: "Message sent successfully!" };
   } catch (e) {
-    console.error(e);
+    console.error("Database Error:", e);
     return { success: false, Message: "Error: Message not sent", Error: e.message };
   }
 }

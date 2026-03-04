@@ -1,7 +1,6 @@
-import DotGrid from "@/component/animations/DotGrid";
+"use client"
 import Navbar from "@/component/Navbar";
-import SplitText from "@/component/animations/SplitText";
-import Button from "@/component/smallcom/Buttons";
+import DownloadButton from "@/component/smallcom/DownloadButton";
 import Footer from "@/component/Footer" 
 
 export default function Home() {
@@ -38,7 +37,7 @@ export default function Home() {
 
       {/* Button */}
       <div className="slide-in-left flex mt-2">
-        <Button />
+        <DownloadButton />
       </div>
     </div>
   </div>
