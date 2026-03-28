@@ -3,23 +3,20 @@ import { useState } from "react"
 import Navbar from "@/component/Navbar"
 import Footer from "@/component/Footer" 
 import { SaveMessage } from "@/actions"
+import { Form } from "lucide-react"
 
 export default function Contact() {
   const [msg, setmsg] = useState("")
 
   async function handleSubmit(e) {
     e.preventDefault();
-
     const formData = new FormData(e.currentTarget);
-
+    console.log(formData)
     const data = Object.fromEntries(formData);
-
+    console.log(data)
     setmsg("Igniting connection...")
-
     const res = await SaveMessage(data);
-    
     if (res.success) {
-        const { name, email, message } = res.msg;
 
 
       setmsg("Message received. I'll be in touch shortly.");

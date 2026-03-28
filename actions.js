@@ -14,14 +14,19 @@ export async function SaveMessage(data) {
     },
   });
 
-   const mailOptions = {
+  
+
+ 
+  const displayName = name || "A User"; 
+
+  const mailOptions = {
     from: `"Portfolio" <saadmirzapak@gmail.com>`,
     to: "saadmirzapak@gmail.com",
     replyTo: email,
-    subject: `Message from ${name}`,
+    subject: `Message from ${displayName}`, 
     html: `
       <div style="font-family: sans-serif; line-height: 1.5; color: #333;">
-        <p><strong>From:</strong> ${name} (${email})</p>
+        <p><strong>From:</strong> ${displayName} (${email})</p>
         <p><strong>Date:</strong> ${new Date().toLocaleString('en-GB')}</p>
         
         <div style="margin-top: 20px; padding: 15px; border-left: 4px solid #e2e8f0; background: #f8fafc;">
