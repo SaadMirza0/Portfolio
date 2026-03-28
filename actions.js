@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 
 export async function SaveMessage(data) {
   const { name, email, message } = data;
-
+const username = name || "Anonymous";
   // 1. Setup Transporter
   const transporter = nodemailer.createTransport({
     service: 'gmail',
