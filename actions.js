@@ -3,8 +3,8 @@ import { sql } from '@vercel/postgres';
 import nodemailer from 'nodemailer'; 
 
 export async function SaveMessage(data) {
-  const { name, email, message } = data;
-const username = name || "Anonymous";
+  const { username, email, message } = data;
+
   // 1. Setup Transporter
   const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -17,16 +17,15 @@ const username = name || "Anonymous";
   
 
  
-  const displayName = name || "A User"; 
 
   const mailOptions = {
     from: `"Portfolio" <saadmirzapak@gmail.com>`,
     to: "saadmirzapak@gmail.com",
     replyTo: email,
-    subject: `Message from ${displayName}`, 
+    subject: `Message from ${username}`, 
     html: `
       <div style="font-family: sans-serif; line-height: 1.5; color: #333;">
-        <p><strong>From:</strong> ${displayName} (${email})</p>
+        <p><strong>From:</strong> ${username} (${email})</p>
         <p><strong>Date:</strong> ${new Date().toLocaleString('en-GB')}</p>
         
         <div style="margin-top: 20px; padding: 15px; border-left: 4px solid #e2e8f0; background: #f8fafc;">

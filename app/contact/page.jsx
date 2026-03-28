@@ -11,7 +11,7 @@ export default function Contact() {
   async function handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    console.log(formData)
+   
     const data = Object.fromEntries(formData);
     console.log(data)
     setmsg("Igniting connection...")
@@ -64,7 +64,7 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                   <div className="relative group">
-                    <input type="text" name="name" required placeholder=" " className={inputClasses} />
+                    <input type="text" name="username" required placeholder=" " className={inputClasses} />
                     <label className={labelClasses}>What's your name?</label>
                     <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-white transition-all duration-500 group-hover:w-full" />
                   </div>
