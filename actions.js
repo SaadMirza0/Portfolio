@@ -3,7 +3,7 @@ import { sql } from '@vercel/postgres';
 import nodemailer from 'nodemailer'; 
 
 export async function SaveMessage(data) {
-  const { username, email, message } = data;
+  const { message, email, username } = data;
 
   // 1. Setup Transporter
   const transporter = nodemailer.createTransport({
