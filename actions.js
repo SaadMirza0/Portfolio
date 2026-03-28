@@ -60,6 +60,9 @@ export async function SaveMessage(data) {
     return { success: true, Message: "Message sent successfully!" };
   } catch (e) {
     console.error("Database Error:", e);
+    console.log("Mail Options:", mailOptions);
+    console.log("Transporter Config:", transporter.options);
+    console.log("Result:", result);
     return { success: false, Message: "Error: Message not sent", Error: e.message };
   }
 }
