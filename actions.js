@@ -3,7 +3,7 @@ import { sql } from '@vercel/postgres';
 import nodemailer from 'nodemailer'; 
 
 export async function SaveMessage(data) {
-  const { username, email, message } = data;
+  const { username, email, message,subject } = data;
 
   // 1. Setup Transporter
   const transporter = nodemailer.createTransport({
@@ -14,23 +14,27 @@ export async function SaveMessage(data) {
     },
   });
 
-  const mailOptions = {
+   const mailOptions = {
     from: `"Portfolio" <saadmirzapak@gmail.com>`,
     to: "saadmirzapak@gmail.com",
     replyTo: email,
-    subject: `New message from ${username}`,
+    subject: `Message from ${username}`,
     html: `
-      <div style="font-family: sans-serif; max-width: 500px; border: 1px solid #eee; padding: 20px; border-radius: 8px;">
-        <h2 style="color: #2563eb; margin-top: 0;">Portfolio Inquiry</h2>
-        <p><strong>Name:</strong> ${username}</p>
-        <p><strong>Email:</strong> ${email}</p>
+      <div style="font-family: sans-serif; line-height: 1.5; color: #333;">
+        <p><strong>From:</strong> ${username} (${email})</p>
         <p><strong>Date:</strong> ${new Date().toLocaleString('en-GB')}</p>
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;" />
-        <div style="background: #f9f9f9; padding: 15px; border-radius: 5px;">${message}</div>
-        <a href="mailto:${email}" style="display: inline-block; margin-top: 20px; color: #2563eb; text-decoration: none; font-weight: bold;">Reply to User →</a>
+        
+        <div style="margin-top: 20px; padding: 15px; border-left: 4px solid #e2e8f0; background: #f8fafc;">
+          ${message}
+        </div>
+
+        <p style="margin-top: 20px;">
+          <a href="mailto:${email}" style="color: #2563eb; text-decoration: none;">Click to Reply</a>
+        </p>
       </div>
     `
   };
+
 
   try {
    

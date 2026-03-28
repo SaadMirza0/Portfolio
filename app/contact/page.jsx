@@ -9,13 +9,23 @@ export default function Contact() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+
     const formData = new FormData(e.currentTarget);
+
     const data = Object.fromEntries(formData);
+
     setmsg("Igniting connection...")
+
     const res = await SaveMessage(data);
+    
     if (res.success) {
+        const { name, email, message } = res.msg;
+
+
       setmsg("Message received. I'll be in touch shortly.");
       e.target.reset(); 
+
+
     } else {
       setmsg("Something went wrong. Please try again.");
     }
