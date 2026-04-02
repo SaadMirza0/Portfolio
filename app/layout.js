@@ -5,19 +5,19 @@ import { Montserrat, Roboto } from 'next/font/google';
 export const montserrat = Montserrat({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-montserrat', // Use variables for easier Tailwind integration
+  variable: '--font-montserrat', 
 });
 
 export const roboto = Roboto({
-  weight: ['400', '700'], // Roboto requires specific weights if not a variable font
+  weight: ['400', '700'],
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-roboto',
 });
 
 export const metadata = {
-  title: "Portfolio",
-  description: "Saad Mirza Portfolio",
+  title: "Saad Mirza - Full Stack Developer | Portfolio",
+  description: "SaadMirza.dev Portfolio",
 };
 
 export default function RootLayout({ children }) {
