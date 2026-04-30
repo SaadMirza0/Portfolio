@@ -6,7 +6,7 @@ import DownloadButton from "./smallcom/DownloadButton";
 import ShinyText from "./animations/Textshine";
 import { usePathname } from "next/navigation";
 import Button from "./smallcom/Buttons";
-
+import { motion} from 'framer-motion';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -17,9 +17,26 @@ export default function Navbar() {
 <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 sm:px-6 md:px-12 lg:px-20 py-3 md:py-4 transition-all bg-black/20 backdrop-blur-xl border-b border-white/10">
   
   {/* Logo/Name - Left side */}
-  <span className="text-lg sm:text-xl md:text-2xl lg:text-[2rem] font-heading shrink-0 text-white">
-   SM
+ <div className="flex items-center gap-3 shrink-0">
+  {/* The Monogram */}
+  <span className="text-xl sm:text-2xl md:text-3xl lg:text-[2rem] font-black tracking-tighter text-white uppercase">
+    S<span className="text-cyan-500">.</span>M
   </span>
+
+  {/* Architectural Divider */}
+  <div className="h-6 w-[1px] bg-zinc-800" />
+
+  {/* Technical Label */}
+  <div className="flex flex-col justify-center">
+    <span className="text-[10px] font-mono font-bold tracking-[0.3em] text-zinc-500 uppercase leading-none">
+      Saad
+    </span>
+    <span className="text-[10px] font-mono font-bold tracking-[0.3em] text-zinc-500 uppercase leading-none mt-1">
+      Mirza
+    </span>
+  </div>
+</div>
+
 
   {/* Desktop Navigation */}
   <ul className="hidden md:flex mx-auto font-body text-[0.9rem] md:text-[1rem] lg:text-[1rem] 2xl:text-2xl 2xl:py-4 gap-2 lg:gap-8 items-center

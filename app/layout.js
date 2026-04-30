@@ -18,6 +18,17 @@ export const roboto = Roboto({
 export const metadata = {
   title: "Saad Mirza - Full Stack Developer | Portfolio",
   description: "SaadMirza.dev Portfolio",
+  icons: {
+    icon: [
+      {
+        url: "/logo.svg",
+        type: "image/svg+xml",
+      },
+    ],
+    // Optional: Keep the PNG as a backup for very old browsers
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
