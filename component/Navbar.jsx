@@ -18,7 +18,7 @@ export default function Navbar() {
   
   {/* Logo/Name - Left side */}
   <span className="text-lg sm:text-xl md:text-2xl lg:text-[2rem] font-heading shrink-0 text-white">
-   Saad
+   SM
   </span>
 
   {/* Desktop Navigation */}
