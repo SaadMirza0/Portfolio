@@ -10,7 +10,7 @@ export async function SaveMessage(data) {
     service: 'gmail',
     auth: {
       user: "saadmirzapak@gmail.com",
-      pass: "mbwx fhml nkcq apfa", // 
+      pass: "qycv kjmd ltbv pgzh", // 
     },
   });
 
