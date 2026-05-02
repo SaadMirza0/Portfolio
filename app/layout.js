@@ -25,7 +25,7 @@ export const metadata = {
         type: "image/svg+xml",
       },
     ],
-    // Optional: Keep the PNG as a backup for very old browsers
+
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },

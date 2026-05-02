@@ -147,8 +147,8 @@ const itemVars = {
           </h3>
           <div className="flex gap-8 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500">
             <a href="#" className="hover:text-white transition-colors hover:translate-y-[-2px] duration-300">LinkedIn</a>
-            <a href="#" className="hover:text-white transition-colors hover:translate-y-[-2px] duration-300">Twitter</a>
-            <a href="#" className="hover:text-white transition-colors hover:translate-y-[-2px] duration-300">GitHub</a>
+           
+   
           </div>
         </motion.div>
       </div>

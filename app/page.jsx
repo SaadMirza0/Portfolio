@@ -9,23 +9,23 @@ export default function Home() {
     {
       id: "01",
       title: "Web Developer",
-      desc: "Architecting high-performance digital systems with clean, scalable code structures.",
+      desc: "Building fast, reliable websites using clean code that is easy to manage.",
       tag: "Engineering",
-      accent: "#7877c6", // Purple
+      accent: "#7877c6", // purple
     },
     {
       id: "02",
       title: "UI/UX Designer",
-      desc: "Creating intuitive interfaces where technical logic meets human-centered design.",
+      desc: "Designing easy-to-use apps and websites that people love to interact with.",
       tag: "Experience",
-      accent: "#3b82f6", // Blue
+      accent: "#3b82f6", // blue
     },
     {
       id: "03",
       title: "Graphic Designer",
-      desc: "Visual storytelling through precision-engineered branding and visual identity.",
+      desc: "Telling your story through creative designs and eye catching brand identities.",
       tag: "Visuals",
-      accent: "#06b6d4", // Cyan
+      accent: "#06b6d4", // cyan
     },
     
   ];
@@ -97,12 +97,12 @@ export default function Home() {
 
         {/* 2 lines */}
         <motion.div variants={itemVars} className="max-w-xl">
-          <p className="text-base md:text-lg lg:text-xl font-light leading-relaxed text-zinc-500">
-            Engineering high-performance digital systems where 
-            <span className="text-white font-normal"> technical logic</span> meets 
-            <span className="italic text-zinc-300"> aesthetic soul</span>. 
-            Focusing on scalable architecture and seamless user experiences.
-          </p>
+       <p className="text-base md:text-lg lg:text-xl font-light leading-relaxed text-zinc-500">
+  Adapting to a fast-growing world through 
+  <span className="text-white font-normal"> modern code</span> and 
+  <span className="italic text-zinc-300"> helpful innovation</span>. 
+  Building high-quality digital experiences for any challenge, driven by a passion for constant learning.
+</p>
         </motion.div>
 
         {/* resume download button and works */}

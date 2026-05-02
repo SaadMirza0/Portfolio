@@ -1,7 +1,7 @@
 "use client"
-import DotGrid from "@/component/animations/DotGrid";
+
 import Navbar from "@/component/Navbar";
-import SplitText from "@/component/animations/SplitText";
+
 import Footer from "@/component/Footer" 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
@@ -9,16 +9,35 @@ import { useEffect } from 'react';
 export default function AboutPage() {
   const containerRef = useRef(null);
  const projects = [
-    {
-      title: "Nova Engine",
-      category: "Full-Stack Architecture",
-      image: "/api/placeholder/800/600", // Replace with your project image
-    },
-    {
-      title: "Aura UX",
-      category: "Design System",
-      image: "/api/placeholder/800/600",
-    }
+   {
+  title: "Bakery Website (Template)",
+  category: "UX Design",
+  year : 2025,
+  image: "/api/placeholder/800/600",
+  link: "", 
+},
+{
+  title: "Full Stack E-Commerce Store",
+  category: "Full-Stack Website",
+   year : 2025,
+  image: "/api/placeholder/800/600",
+  link: "https://github.com/SaadMirza0/E-Store",
+},
+{
+  title: "Full Stack Store",
+  category: "Full-Stack Website",
+   year : 2026,
+  image: "/api/placeholder/800/600",
+  link: "https://github.com/SaadMirza0/E-Store",
+},
+{
+  title: "Esturro Store",
+  category: "Full Stack Buissness website",
+  year : 2026,
+  image: "/api/placeholder/800/600",
+  link: "https://esturro.store",
+}
+
   ];
 
   const skills = [
@@ -92,7 +111,7 @@ const lineVars = {
   }
 };
   return (
-    <div className="relative min-h-screen w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] overflow-x-hidden">
+    <div className="relative min-h-screen w-full  bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] overflow-x-hidden">
       <nav className="fixed top-0 left-0 z-50 w-full">
         <Navbar />
       </nav>
@@ -106,9 +125,9 @@ const lineVars = {
   initial="initial"
   whileInView="animate"
   viewport={{ once: true }}
-  className="w-full lg:w-1/2 text-white flex flex-col justify-center px-6 sm:px-10 md:px-12 lg:px-16 py-12 lg:py-0 selection:bg-cyan-500/30 relative"
+  className="w-full lg:w-1/2 text-white flex flex-col justify-center px-60 sm:px-100 md:px-120 lg:px-16  py-12 lg:py-0 selection:bg-cyan-500/30 relative"
 >
-  {/* Theme Sync: Cinematic Ambient Glow (Matches Home Hero) */}
+ 
   <motion.div 
     animate={{ 
       opacity: [0.05, 0.12, 0.05],
@@ -142,26 +161,26 @@ const lineVars = {
     </motion.div>
 
     {/* Primary Intro: High-performance logic theme */}
-    <motion.p 
-      variants={itemVars}
-      className="font-light text-xl sm:text-2xl md:text-3xl lg:text-[1.8rem] xl:text-[2.2rem] leading-[1.1] max-w-[25ch] sm:max-w-xl text-zinc-400"
-    >
-      Im <span className="font-bold text-white relative inline-block group/name transition-colors cursor-default">
-        Saad Mirza
-        <span className="absolute bottom-1 left-0 w-full h-[1px] bg-cyan-500 scale-x-0 group-hover/name:scale-x-100 transition-transform duration-500 origin-left shadow-[0_0_15px_rgba(6,182,212,0.4)]"></span>
-      </span>, 
-      an 18-year-old developer <br className="hidden md:block" /> 
-      crafting digital experiences where <br className="hidden md:block" /> 
-      <span className="italic font-serif text-zinc-200 opacity-100">logic meets aesthetic.</span>
-    </motion.p>
+  <motion.p 
+  variants={itemVars}
+  className="font-light text-xl sm:text-2xl md:text-3xl lg:text-[1.8rem] xl:text-[2.2rem] leading-[1.1] max-w-[25ch] sm:max-w-xl text-zinc-400"
+>
+  I’m <span className="font-bold text-white relative inline-block group/name transition-colors cursor-default">
+    Saad Mirza
+    <span className="absolute bottom-1 left-0 w-full h-[1px] bg-cyan-500 scale-x-0 group-hover/name:scale-x-100 transition-transform duration-500 origin-left shadow-[0_0_15px_rgba(6,182,212,0.4)]"></span>
+  </span>, 
+  an 18-year-old Full-Stack Engineer <br className="hidden md:block" /> 
+  who finds purpose in <br className="hidden md:block" /> 
+  <span className="italic font-serif text-zinc-200 opacity-100">continuous learning and problem solving.</span>
+</motion.p>
 
     {/* Bio: Optimized for Professional Impact */}
-    <motion.p 
-      variants={itemVars}
-      className="mt-8 sm:mt-10 font-light text-base sm:text-lg md:text-xl lg:text-[1.15rem] xl:text-[1.3rem] leading-relaxed max-w-lg text-zinc-500 hover:text-zinc-300 transition-colors duration-700"
-    >
-      I solve real-world problems through <span className="text-white font-normal">minimalist engineering</span>. I believe in the power of refined aesthetics—building high-performance interfaces defined by technical precision and creative soul.
-    </motion.p>
+   <motion.p 
+  variants={itemVars}
+  className="mt-8 sm:mt-10 font-light text-base sm:text-lg md:text-xl lg:text-[1.15rem] xl:text-[1.3rem] leading-relaxed max-w-lg text-zinc-500 hover:text-zinc-300 transition-colors duration-700"
+>
+  I turn my passion for software building into <span className="text-white font-normal">efficient digital solutions</span>. By leveraging <span className="text-white font-normal">AI </span> to maximize my workflow, I help local businesses and global clients through freelancing—delivering high-performance code with a creative soul.
+</motion.p>
 
     {/* Interactive Skills Tags: Staggered "System" pop-in */}
     <motion.div 
